@@ -5,7 +5,7 @@ const compression = require("compression");
 const chalk = require("chalk");
 
 // Update PORT for Heroku deployment
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const app = express();
 
@@ -20,7 +20,9 @@ app.use(express.static("public"));
 // Update connection for MongoDB Atlas and Heroku
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  // useUnifiedTopology: true,
+  // useCreateIndex: true
 });
 
 // routes
