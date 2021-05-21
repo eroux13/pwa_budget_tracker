@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const request = indexedDB.open("budgetDB", 1);
 
 request.onupgradeneeded = function(event) {
@@ -54,4 +52,4 @@ function saveRecord(record) {
     store.add(record);
 }
 
-window.addEventListener("onLine", checkDB);
+window.addEventListener("online", checkDB);
